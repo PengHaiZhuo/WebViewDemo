@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Title</title>
+    <script type="text/javascript">
+        <!--这个方法是用来测试js调用java的-->
+        function printLog(logText){
+           //jsb是和应用端商量好的字段，那边的webView有设置，所以可以拉起java方法
+          jsb.printLog(logText);
+          jsb.printLogNew(logText);
+        }
+
+        <!--这个方法是用来测试java调用js的-->
+        function test(i,m)
+        {
+        document.getElementById("h").innerHTML= (i+m);
+        }
+
+        function testPop(){
+            alert("17张牌你能秒我？");
+        }
+    </script>
+    <style type="text/css">
+				html{
+					margin:0;
+					padding:0;
+					background:#6FF;
+					//inherit指跟随父亲
+					height:inherit;
+					width:inherit;
+            		}
+				.bt_todo_java{
+					width:auto;
+					height:35px;
+					}
+    </style>
+</head>
+<body>
+<h1 id="h">我是标题</h1>
+<button class="bt_todo_java" id="button_one" onclick="printLog('你要干什么')">js调用java</button>
+</body>
+</html>
